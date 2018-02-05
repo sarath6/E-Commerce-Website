@@ -12,3 +12,21 @@ The functions provided by the application are
 	Search Product
 	Log Analyzer
 	Feedback Monitor
+#Modules
+Customer Registration
+Allows the customer to provide his personal details with photo for registration. The details are updated to the customer table. Each customer is provided with unique id and password. The registered customers can be viewed by the administrator.
+Product Maintenance
+The admin identifies the product and creates the catalog. The details of the product, its images, specification, price and rating (based on feedback) are displayed. The admin can update the details or remove the product from the catalog.
+Shop Product
+The registered customers are allowed to identify and purchase products. The module tracks the behavior of parsing the products and identifies the customer interest. The details of his interests are shown to him the next time he visits.
+
+#System Requirement
+Software requirement
+Operating System	: Windows 2000 or Higher	
+Platform	: .Net (C#)
+Backend	: Ms-SQLServer
+
+Hardware Requirement (Minimum)
+Processor			: PIV
+Ram				: 512 Mb
+Hard Disk			: 10 GB space
