@@ -21,6 +21,7 @@ Shop Product
 The registered customers are allowed to identify and purchase products. The module tracks the behavior of parsing the products and identifies the customer interest. The details of his interests are shown to him the next time he visits.
 
 #System Requirement
+
 Software requirement
 Operating System	: Windows 2000 or Higher	
 Platform	: .Net (C#)
@@ -30,3 +31,243 @@ Hardware Requirement (Minimum)
 Processor			: PIV
 Ram				: 512 Mb
 Hard Disk			: 10 GB space
+
+#Test Cases
+
+6.6.1 Test Case 1
+Module : Login
+Filename : login.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Valid Login	
+User Id, Password	
+Login Success	
+Login Success	
+Test Passed!
+Control Transferred to Menu
+
+
+Invalid Login	
+User Id, Password	
+Login Failed	
+Login Failed	
+Test Passed!
+Try Again
+
+
+Invalid Login	
+Null,Null	
+Login Failed	
+Login Failed	
+Test Passed!
+Try Again
+
+
+
+
+
+
+
+
+
+6.6.2 Test Case 2
+Module : Change Password
+Filename : cpwd.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Valid Password, Password updation	
+Old Pwd, New Pwd & Conf Pwd	
+Success	
+Success	
+Test Passed!
+Password Changed
+
+
+Invalid Password, Password updation Failed	
+Old Pwd, New Pwd & Conf Pwd	
+Failed	
+Failed	
+Test Passed!
+Old pwd incorrect or new pwd & conf pwd mismatch
+
+
+
+
+
+
+
+
+6.6.3 Test Case 3
+Module : Registration
+Filename : reg.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Registration	
+User Details	
+Success	
+Success	
+Test Passed!
+User created with id and password
+
+
+Registration	
+User Details	
+Failed	
+Failed	
+Test Passed! Incomplete or invalid data.
+
+
+
+
+
+
+
+
+6.6.4 Test Case 4
+Module : Product Maintenance
+Filename : addproduct.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Create Product 	
+Product Info	
+Success	
+Success	
+Test Passed!
+Product created, image uploaded
+
+
+Create Product 	
+Product Info	
+Failed	
+Failed	
+Test Passed! Invalid data or picture file not found
+
+
+
+
+
+
+
+
+
+
+
+6.6.5 Test case 5
+Module : Search Products
+Filename : search.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Display Products	
+Product ID	
+Success	
+Success	
+Test Passed!
+Data displayed
+
+
+Display Products	
+Product ID	
+Failed	
+Failed	
+Test Passed! Product not found.
+
+
+
+
+
+
+
+
+6.6.6 Test Case 6
+Module : Shop Products
+Filename : shopprod.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Purchase Products	
+Product ID, category, qty	
+Success	
+Success	
+Test Passed!
+Order placed
+
+
+Purchase Products	
+Product ID, category, qty	
+Failed	
+Failed	
+Test Passed! Product not found.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.6.7 Test Case 7
+Module : Set Feedback
+Filename : setfeed.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Feedback	
+Order id, comments	
+Success	
+Success	
+Test Passed!
+Feedback saved
+
+
+Feedback	
+Order id, comments	
+Failed	
+Failed	
+Test Passed! Invalid Order.
+
+
+
+
+
+
+
+
+6.6.8 Test Case 8
+Module : Horizontal aggregation
+Filename : pivot.jsp
+
+Test	Input	Recvd Output	Act Output	Desc
+
+Crosstab 	
+Src, dest table, comm. Column, row param, col params	
+Success	
+Success	
+Test Passed!
+Pivot generated and cross tab displayed
+
+
+Crosstab 	
+Src, dest table, comm. Column, row param, col params	
+Failed	
+Failed	
+Test Passed! Check pivot inputs
+
+
+
+
+
+
+
+
+
