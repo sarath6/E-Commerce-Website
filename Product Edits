@@ -1,0 +1,106 @@
+//Add Product
+
+
+<%@ page import="java.sql.*" %>
+<%
+Connection con=null;
+Statement stmt=null;
+ResultSet rs=null;
+%>
+<%
+try
+{
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+con=DriverManager.getConnection("jdbc:odbc:bsupdsn","sa","a");
+stmt=con.createStatement();
+rs=stmt.executeQuery("select cname from category");
+
+out.println("<html><h3>Products</h3><hr><body ><form method=post action='add_product1.jsp' name=f1 ><table cellspacing='10'>");
+out.println("<tr><td>Category</td><td><select name=cat>");
+
+while(rs.next())
+{
+out.println("<option>" + rs.getString(1)+ "</option>");
+}
+out.println("</td></tr>");
+
+out.println("<tr><td>Product Name</td><td><input type=text name=pname size=25></td></tr>");
+out.println("<tr><td>Description</td><td><textarea name=pdescp cols=40 rows=6></textarea></td></tr>");
+out.println("<tr><td>Cost</td><td><input type=text name=cost size=15></td></tr>");
+out.println("<tr><td></td><td><input type=submit value='Submit'><input type=reset></td></tr></table></form></html>");
+}
+catch(Exception ee)
+{
+out.println(ee.getMessage());
+}
+%>
+
+//Update product
+
+
+<%@ page import="java.sql.*" %>
+<%
+Connection con=null;
+Statement stmt=null;
+ResultSet rs=null;
+%>
+<%
+try
+{
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+con=DriverManager.getConnection("jdbc:odbc:bsupdsn","sa","a");
+stmt=con.createStatement();
+rs=stmt.executeQuery("select pdid from products");
+out.println("<h3>UPDATE PRODUCT</h3><hr><form method=post action='update_product1.jsp'>");
+out.println("<table><tr><td>Product Name</td><td><select name=pname>");
+while(rs.next())
+{
+out.println("<option>" + rs.getString(1) + "</option>");
+}
+out.println("</select></tr>");
+out.println("<tr><td></td><td><input type=submit value='Update'></td></tr></table></form>");
+rs.close();
+}
+catch(Exception ee)
+{
+out.println(ee.getMessage());
+}
+%>
+
+
+
+
+
+
+
+
+//Remove Product
+
+<%@ page import="java.sql.*" %>
+<%
+Connection con=null;
+Statement stmt=null;
+ResultSet rs=null;
+%>
+<%
+try
+{
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+con=DriverManager.getConnection("jdbc:odbc:bsupdsn","sa","a");
+stmt=con.createStatement();
+rs=stmt.executeQuery("select pdid from products");
+out.println("<h3>REMOVE PRODUCT</h3><hr><form method=post action='remove_product1.jsp'>");
+out.println("<table><tr><td>Product ID</td><td><select name=pid>");
+while(rs.next())
+{
+out.println("<option>" + rs.getString(1) + "</option>");
+}
+out.println("</select></tr>");
+out.println("<tr><td></td><td><input type=submit value='Delete'></td></tr></table></form>");
+rs.close();
+}
+catch(Exception ee)
+{
+out.println(ee.getMessage());
+}
+%>
